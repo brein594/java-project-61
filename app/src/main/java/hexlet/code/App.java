@@ -1,7 +1,6 @@
 package hexlet.code;
-import  hexlet.code.Cli;
 import java.util.Scanner;
-import hexlet.code.Game;
+import hexlet.code.games.Game;
 
 public class App {
     public static void main(String[] args) {
@@ -18,15 +17,12 @@ public class App {
         //scanner.close();
             switch (play) {
                 case 3:
-                    System.out.println("Welcome to the Brain Games!");
                     Game.calc();
                     break;
                 case 2:
-                    System.out.println("Welcome to the Brain Games!");
                     Game.even();
                     break;
                 case 1:
-                    System.out.println("Welcome to the Brain Games!");
                     Game.greet();
                     break;
                 case 0:

@@ -1,46 +1,47 @@
-package hexlet.code;
+package hexlet.code.games;
+import hexlet.code.Cli;
+import hexlet.code.Engine;
 import java.util.Random;
-
-
 import java.util.Scanner;
 
 public class Game {
     public static void greet() {
-        var playName = Cli.getByName();
+        //System.out.println("Welcome to the Brain Games!");
+        Engine.greeting();
+        Cli.getByName();
     }
     public static void even() {
+        Engine.greeting();
         var playName = Cli.getByName();
-        int endGame = 4;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String question = "";
         int indexGame = 0;
-        while (indexGame < 3) {
+        while (indexGame < Engine.numbersOfGames ) {
             var numberRandom = (int)(Math.random() * 100) +1;
             System.out.println("Question: " + numberRandom);
-            System.out.println("Your answer:  ");
+            System.out.print("Your answer:  ");
             Scanner scanner = new Scanner(System.in);
             question = scanner.nextLine();
             var evenNumber = numberRandom % 2 == 0 ? "yes" : "no";
             if (evenNumber.equals(question)) {
-                System.out.println("Correct!");
+                Engine.correct();
                 indexGame++;
             } else {
-                System.out.println(question + " is wrong answer ;(. Correct answer was " + evenNumber);
-                System.out.println("Let's try again, " + playName + "!");
-                indexGame = endGame;
+                Engine.failEnd(question, evenNumber, playName);
+                indexGame = Engine.numbersOfGames + 1;
             }
-            if (indexGame == 3) {
-                System.out.println("Congratulations, " + playName + "!");
+            if (indexGame == Engine.numbersOfGames) {
+                Engine.succesfulEnd(playName);
             }
         }
     }
     public static void calc() {
+        Engine.greeting();
         var playName = Cli.getByName();
-        int endGame = 4;
         System.out.println("What is the result of the expression?");
         int question;
         int indexGame = 0;
-        while (indexGame < 3) {
+        while (indexGame < Engine.numbersOfGames) {
             var numberRandomA = (int)(Math.random() * 100) +1;
             var numberRandomB = (int)(Math.random() * 100) +1;
             Random random = new Random();
@@ -64,19 +65,20 @@ public class Game {
                     break;
             }
             System.out.println("Question: " + numberRandomA + " " + resultString + " " + numberRandomB);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             question = scanner.nextInt();
             if (question == resultInt) {
-                System.out.println("Correct!");
+                Engine.correct();
                 indexGame++;
             } else {
-                System.out.println(question + " is wrong answer ;(. Correct answer was " + resultInt);
-                System.out.println("Let's try again, " + playName + "!");
-                indexGame = endGame;
+                Engine.failEnd(question, resultInt, playName);
+                //System.out.println(question + " is wrong answer ;(. Correct answer was " + resultInt);
+                //System.out.println("Let's try again, " + playName + "!");
+                indexGame = Engine.numbersOfGames + 1;
             }
-            if (indexGame == 3) {
-                System.out.println("Congratulations, " + playName + "!");
+            if (indexGame == Engine.numbersOfGames) {
+                Engine.succesfulEnd(playName);
             }
         }
     }
