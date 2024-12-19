@@ -44,7 +44,7 @@ public class Game {
             var numberRandomA = (int)(Math.random() * 100) +1;
             var numberRandomB = (int)(Math.random() * 100) +1;
             Random random = new Random();
-            int numberRandomOperation = random.nextInt(2);
+            int numberRandomOperation = random.nextInt(3);
             int resultInt = 0;
             String resultString = "";
             switch (numberRandomOperation) {
