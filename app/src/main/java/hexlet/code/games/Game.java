@@ -14,20 +14,20 @@ public class Game {
         Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        String question = "";
+        String answer = "";
         int indexGame = 0;
         while (indexGame < Engine.numbersOfGames ) {
             var numberRandom = (int)(Math.random() * 100) +1;
             System.out.println("Question: " + numberRandom);
             System.out.print("Your answer:  ");
             Scanner scanner = new Scanner(System.in);
-            question = scanner.nextLine();
+            answer = scanner.nextLine();
             var evenNumber = numberRandom % 2 == 0 ? "yes" : "no";
-            if (evenNumber.equals(question)) {
+            if (evenNumber.equals(answer)) {
                 Engine.correct();
                 indexGame++;
             } else {
-                Engine.failEnd(question, evenNumber, playName);
+                Engine.failEnd(answer, evenNumber, playName);
                 indexGame = Engine.numbersOfGames + 1;
             }
             if (indexGame == Engine.numbersOfGames) {
@@ -39,7 +39,7 @@ public class Game {
         Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("What is the result of the expression?");
-        int question;
+        int answer;
         int indexGame = 0;
         while (indexGame < Engine.numbersOfGames) {
             var numberRandomA = (int)(Math.random() * 100) +1;
@@ -67,12 +67,12 @@ public class Game {
             System.out.println("Question: " + numberRandomA + " " + resultString + " " + numberRandomB);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
-            question = scanner.nextInt();
-            if (question == resultInt) {
+            answer = scanner.nextInt();
+            if (answer == resultInt) {
                 Engine.correct();
                 indexGame++;
             } else {
-                Engine.failEnd(question, resultInt, playName);
+                Engine.failEnd(answer, resultInt, playName);
                 //System.out.println(question + " is wrong answer ;(. Correct answer was " + resultInt);
                 //System.out.println("Let's try again, " + playName + "!");
                 indexGame = Engine.numbersOfGames + 1;
@@ -81,5 +81,36 @@ public class Game {
                 Engine.succesfulEnd(playName);
             }
         }
+    }
+
+    public static void gcd() {
+        Engine.greeting();
+        var playName = Cli.getByName();
+        System.out.println("Find the greatest common divisor of given numbers.");
+        int answer;
+        int indexGame = 0;
+        while (indexGame < Engine.numbersOfGames) {
+            var numberRandomA = (int)(Math.random() * 100) +1;
+            var numberRandomB = (int)(Math.random() * 100) +1;
+            int resultInt = findGcd(numberRandomA, numberRandomB);
+            System.out.println("Question: " + numberRandomA + " " + numberRandomB);
+            System.out.print("Your answer: ");
+            Scanner scanner = new Scanner(System.in);
+            answer = scanner.nextInt();
+
+            if (answer == resultInt) {
+                Engine.correct();
+                indexGame++;
+            } else {
+                Engine.failEnd(answer, resultInt, playName);
+                indexGame = Engine.numbersOfGames + 1;
+            }
+            if (indexGame == Engine.numbersOfGames) {
+                Engine.succesfulEnd(playName);
+            }
+        }
+    }
+    private static int findGcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : findGcd(b, a % b);
     }
 }
