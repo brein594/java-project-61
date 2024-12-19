@@ -18,12 +18,10 @@ public class App {
             switch (play) {
                 case 2:
                     System.out.println("Welcome to the Brain Games!");
-                    Cli.getByName();
                     Game.even();
                     break;
                 case 1:
                     System.out.println("Welcome to the Brain Games!");
-                    Cli.getByName();
                     Game.greet();
                     break;
                 case 0:
