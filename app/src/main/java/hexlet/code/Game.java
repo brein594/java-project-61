@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Game {
     public static void greet() {
         var playName = Cli.getByName();
+    }
+    public static void even() {
+        var playName = Cli.getByName();
         int endGame = 4;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String question = "";
@@ -29,9 +32,5 @@ public class Game {
                 System.out.println("Congratulations, " + playName + "!");
             }
         }
-    }
-    public static void even() {
-        var playName = Cli.getByName();
-        System.out.println("even");
     }
 }
