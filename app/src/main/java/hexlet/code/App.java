@@ -1,6 +1,7 @@
 package hexlet.code;
 import java.util.Scanner;
-import hexlet.code.games.Game;
+
+import hexlet.code.games.*;
 
 public class App {
     public static void main(String[] args) {
@@ -20,22 +21,22 @@ public class App {
         //scanner.close();
             switch (play) {
                 case 6:
-                    Game.prime();
+                    PrimeGame.prime();
                     break;
                 case 5:
-                    Game.progression();
+                    ProgressionGame.progression();
                     break;
                 case 4:
-                    Game.gcd();
+                    GcdGame.gcd();
                     break;
                 case 3:
-                    Game.calc();
+                    CalcGame.calc();
                     break;
                 case 2:
-                    Game.even();
+                    EvenGame.even();
                     break;
                 case 1:
-                    Game.greet();
+                    GreetGame.greet();
                     break;
                 case 0:
                     break;
