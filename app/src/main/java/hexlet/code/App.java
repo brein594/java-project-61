@@ -11,12 +11,16 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         Scanner scanner = new Scanner(System.in);
         play = scanner.nextInt();
         System.out.println("Your choice: " + play);
         //scanner.close();
             switch (play) {
+                case 5:
+                    Game.progression();
+                    break;
                 case 4:
                     Game.gcd();
                     break;
