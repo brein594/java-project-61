@@ -28,5 +28,5 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 checkstyle {
-    toolVersion = "10.12.4"
+    toolVersion = "10.21.0"
 }

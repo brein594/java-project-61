@@ -33,7 +33,7 @@ public class ProgressionGame {
                     System.out.print(index + " ");
                 }
             }
-            System.out.println("");
+            System.out.println();
             System.out.print("Your answer: ");
 
             Scanner scanner = new Scanner(System.in);

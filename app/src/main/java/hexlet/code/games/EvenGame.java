@@ -10,7 +10,7 @@ public class EvenGame {
         Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        String answer = "";
+        String answer;
         int indexGame = 0;
         while (indexGame < Engine.numbersOfGames) {
             var numberRandom = (int) (Math.random() * 100) + 1;

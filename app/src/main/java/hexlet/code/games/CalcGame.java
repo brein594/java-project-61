@@ -45,8 +45,6 @@ public class CalcGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, resultInt, playName);
-                //System.out.println(question + " is wrong answer ;(. Correct answer was " + resultInt);
-                //System.out.println("Let's try again, " + playName + "!");
                 indexGame = Engine.numbersOfGames + 1;
             }
             if (indexGame == Engine.numbersOfGames) {
