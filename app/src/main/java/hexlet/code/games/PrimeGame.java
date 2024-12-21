@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class PrimeGame {
     public static void prime() {
-        Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int[] primeNumber = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,

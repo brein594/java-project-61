@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class GcdGame {
     public static void gcd() {
-        Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("Find the greatest common divisor of given numbers.");
         int answer;

@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class ProgressionGame {
     public static void progression() {
-        Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("What number is missing in the progression?");
         int answer;

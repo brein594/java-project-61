@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class EvenGame {
     public static void even() {
-        Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String answer;

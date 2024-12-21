@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class CalcGame {
     public static void calc() {
-        Engine.greeting();
         var playName = Cli.getByName();
         System.out.println("What is the result of the expression?");
         int answer;
