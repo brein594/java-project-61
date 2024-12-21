@@ -35,6 +35,7 @@ public class PrimeGame {
             }
             if (indexGame == Engine.numbersOfGames) {
                 Engine.succesfulEnd(playName);
+                System.out.println("Let's try again, " + playName + "!");
             }
         }
     }
