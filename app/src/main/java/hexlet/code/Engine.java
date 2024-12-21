@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public class Engine {
-    public static int numbersOfGames = 3;
+    public static final int NUMBER_OF_GAME = 3;
 
     public static void succesfulEnd(String name) {
         System.out.println("Congratulations, " + name + "!");

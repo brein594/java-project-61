@@ -14,8 +14,11 @@ public class PrimeGame {
         String answer;
         var answerSimple = "no";
         int indexGame = 0;
-        while (indexGame < Engine.numbersOfGames) {
-            var numberRandom = (int) (Math.random() * 100) + 1;
+        final var NUMBER_LOSER = 1;
+        while (indexGame < Engine.NUMBER_OF_GAME) {
+            final var RANGE_MAX = 100;
+            final var RANGE_FIRST = 1;
+            var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             for (int index : primeNumber) {
                 if (index == numberRandom) {
                     answerSimple = "yes";
@@ -31,9 +34,9 @@ public class PrimeGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, answerSimple, playName);
-                indexGame = Engine.numbersOfGames + 1;
+                indexGame = Engine.NUMBER_OF_GAME + NUMBER_LOSER;
             }
-            if (indexGame == Engine.numbersOfGames) {
+            if (indexGame == Engine.NUMBER_OF_GAME) {
                 Engine.succesfulEnd(playName);
                 System.out.println("Let's try again, " + playName + "!");
             }

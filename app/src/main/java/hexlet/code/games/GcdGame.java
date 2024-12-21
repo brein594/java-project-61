@@ -11,9 +11,12 @@ public class GcdGame {
         System.out.println("Find the greatest common divisor of given numbers.");
         int answer;
         int indexGame = 0;
-        while (indexGame < Engine.numbersOfGames) {
-            var numberRandomA = (int) (Math.random() * 100) + 1;
-            var numberRandomB = (int) (Math.random() * 100) + 1;
+        final int NUMBER_LOSER = 1;
+        while (indexGame < Engine.NUMBER_OF_GAME) {
+            final int RANGE_MAX = 100;
+            final int RANGE_FIRST = 1;
+            var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             int resultInt = findGcd(numberRandomA, numberRandomB);
             System.out.println("Question: " + numberRandomA + " " + numberRandomB);
             System.out.print("Your answer: ");
@@ -25,9 +28,9 @@ public class GcdGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, resultInt, playName);
-                indexGame = Engine.numbersOfGames + 1;
+                indexGame = Engine.NUMBER_OF_GAME + NUMBER_LOSER;
             }
-            if (indexGame == Engine.numbersOfGames) {
+            if (indexGame == Engine.NUMBER_OF_GAME) {
                 Engine.succesfulEnd(playName);
             }
         }

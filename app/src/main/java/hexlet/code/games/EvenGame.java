@@ -11,8 +11,11 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String answer;
         int indexGame = 0;
-        while (indexGame < Engine.numbersOfGames) {
-            var numberRandom = (int) (Math.random() * 100) + 1;
+        final var NUMBER_LOSER = 1;
+        while (indexGame < Engine.NUMBER_OF_GAME) {
+            final var RANGE_MAX = 100;
+            final var RANGE_FIRST = 1;
+            var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             System.out.println("Question: " + numberRandom);
             System.out.print("Your answer:  ");
             Scanner scanner = new Scanner(System.in);
@@ -23,9 +26,9 @@ public class EvenGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, evenNumber, playName);
-                indexGame = Engine.numbersOfGames + 1;
+                indexGame = Engine.NUMBER_OF_GAME + NUMBER_LOSER;
             }
-            if (indexGame == Engine.numbersOfGames) {
+            if (indexGame == Engine.NUMBER_OF_GAME) {
                 Engine.succesfulEnd(playName);
             }
         }
