@@ -12,30 +12,30 @@ public class ProgressionGame {
         System.out.println("What number is missing in the progression?");
         int answer;
         int indexGame = 0;
-        final var NUMBER_LOSER = 1;
+        final var numberLoser = 1;
         while (indexGame < Engine.NUMBER_OF_GAME) {
-            final var RANGE_MAX = 100;
-            final var RANGE_MAX_POSITION = 10;
-            final var RANGE_FIRST = 1;
-            final var STEP_ARRAYS = 1;
-            final var FIRST_ELEMENT = 0;
-            var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
-            var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
-            var numberRandomPosition = (int) (Math.random() * RANGE_MAX_POSITION);
-            int[] arifProgress = new int[10];
+            final var rangeMax = 100;
+            final var rangeMaxPosition = 10;
+            final var rangeFirst = 1;
+            final var stepArray = 1;
+            final var firstElement = 0;
+            var numberRandomA1 = (int) (Math.random() * rangeMax) + rangeFirst;
+            var stepProgress = (int) (Math.random() * rangeMax) + rangeFirst;
+            var numberRandomPosition = (int) (Math.random() * rangeMaxPosition);
+            int[] arifProgress = new int[rangeMaxPosition];
             arifProgress[0] = numberRandomA1;
-            for (int i = 1; i < 10; i++) {
+            for (int i = 1; i < rangeMaxPosition; i++) {
                 arifProgress[i] = arifProgress[0] + i * stepProgress;
             }
             int resultInt = arifProgress[numberRandomPosition];
             System.out.print("Question: ");
-            for (int index : Arrays.copyOfRange(arifProgress, FIRST_ELEMENT, numberRandomPosition)) {
+            for (int index : Arrays.copyOfRange(arifProgress, firstElement, numberRandomPosition)) {
                 System.out.print(index + " ");
             }
             System.out.print(".." + " ");
-            if (numberRandomPosition < arifProgress.length - STEP_ARRAYS) {
-                for (int index : Arrays.copyOfRange(arifProgress, numberRandomPosition +  STEP_ARRAYS,
-                        arifProgress.length -  STEP_ARRAYS)) {
+            if (numberRandomPosition < arifProgress.length - stepArray) {
+                for (int index : Arrays.copyOfRange(arifProgress, numberRandomPosition +  stepArray,
+                        arifProgress.length -  stepArray)) {
                     System.out.print(index + " ");
                 }
             }
@@ -50,7 +50,7 @@ public class ProgressionGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, resultInt, playName);
-                indexGame = Engine.NUMBER_OF_GAME + NUMBER_LOSER;
+                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
             }
             if (indexGame == Engine.NUMBER_OF_GAME) {
                 Engine.succesfulEnd(playName);

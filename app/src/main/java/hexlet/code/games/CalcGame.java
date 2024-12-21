@@ -12,15 +12,15 @@ public class CalcGame {
         System.out.println("What is the result of the expression?");
         int answer;
         int indexGame = 0;
-        final var NUMBER_LOSER = 1;
+        final var numberLoser = 1;
         while (indexGame < Engine.NUMBER_OF_GAME) {
-            final var RANGE_MAX = 100;
-            final var RANGE_FIRST = 1;
-            final int RANGE_OPERATION = 3;
-            var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
-            var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            final var rangeMax = 100;
+            final var rangeFirst = 1;
+            final int rangeOperation = 3;
+            var numberRandomA = (int) (Math.random() * rangeMax) + rangeFirst;
+            var numberRandomB = (int) (Math.random() * rangeMax) + rangeFirst;
             Random random = new Random();
-            int numberRandomOperation = random.nextInt(RANGE_OPERATION);
+            int numberRandomOperation = random.nextInt(rangeOperation);
             int resultInt = 0;
             String resultString = "";
             switch (numberRandomOperation) {
@@ -48,7 +48,7 @@ public class CalcGame {
                 indexGame++;
             } else {
                 Engine.failEnd(answer, resultInt, playName);
-                indexGame = Engine.NUMBER_OF_GAME + NUMBER_LOSER;
+                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
             }
             if (indexGame == Engine.NUMBER_OF_GAME) {
                 Engine.succesfulEnd(playName);
