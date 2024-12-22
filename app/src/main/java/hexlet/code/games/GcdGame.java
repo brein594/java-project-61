@@ -12,7 +12,7 @@ public class GcdGame {
         int answer;
         int indexGame = 0;
         final int numberLoser = 1;
-        while (indexGame < Engine.NUMBER_OF_GAME) {
+        while (indexGame < Engine.NUMBER_OF_GAMES) {
             final int rangeMax = 100;
             final int rangeFirst = 1;
             var numberRandomA = (int) (Math.random() * rangeMax) + rangeFirst;
@@ -24,14 +24,14 @@ public class GcdGame {
             answer = scanner.nextInt();
 
             if (answer == resultInt) {
-                Engine.correct();
+                Engine.showCorrectMessage();
                 indexGame++;
             } else {
-                Engine.failEnd(answer, resultInt, playName);
-                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
+                Engine.showFailMessage(answer, resultInt, playName);
+                indexGame = Engine.NUMBER_OF_GAMES + numberLoser;
             }
-            if (indexGame == Engine.NUMBER_OF_GAME) {
-                Engine.succesfulEnd(playName);
+            if (indexGame == Engine.NUMBER_OF_GAMES) {
+                Engine.showWinMessage(playName);
             }
         }
     }

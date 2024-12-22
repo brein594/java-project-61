@@ -13,12 +13,12 @@ public class ProgressionGame {
         int answer;
         int indexGame = 0;
         final var numberLoser = 1;
-        while (indexGame < Engine.NUMBER_OF_GAME) {
-            final var rangeMax = 100;
-            final var rangeMaxPosition = 10;
-            final var rangeFirst = 1;
-            final var stepArray = 1;
-            final var firstElement = 0;
+        while (indexGame < Engine.NUMBER_OF_GAMES) {
+            final int rangeMax = 100;
+            final int rangeMaxPosition = 10;
+            final int rangeFirst = 1;
+            final int stepArray = 1;
+            final int firstElement = 0;
             var numberRandomA1 = (int) (Math.random() * rangeMax) + rangeFirst;
             var stepProgress = (int) (Math.random() * rangeMax) + rangeFirst;
             var numberRandomPosition = (int) (Math.random() * rangeMaxPosition);
@@ -46,14 +46,14 @@ public class ProgressionGame {
             answer = scanner.nextInt();
 
             if (answer == resultInt) {
-                Engine.correct();
+                Engine.showCorrectMessage();
                 indexGame++;
             } else {
-                Engine.failEnd(answer, resultInt, playName);
-                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
+                Engine.showFailMessage(answer, resultInt, playName);
+                indexGame = Engine.NUMBER_OF_GAMES + numberLoser;
             }
-            if (indexGame == Engine.NUMBER_OF_GAME) {
-                Engine.succesfulEnd(playName);
+            if (indexGame == Engine.NUMBER_OF_GAMES) {
+                Engine.showWinMessage(playName);
             }
         }
     }

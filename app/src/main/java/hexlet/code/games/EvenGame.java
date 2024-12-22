@@ -12,9 +12,9 @@ public class EvenGame {
         String answer;
         int indexGame = 0;
         final var numberLoser = 1;
-        while (indexGame < Engine.NUMBER_OF_GAME) {
-            final var rangeMax = 100;
-            final var rangeFirst = 1;
+        while (indexGame < Engine.NUMBER_OF_GAMES) {
+            final int rangeMax = 100;
+            final int rangeFirst = 1;
             var numberRandom = (int) (Math.random() * rangeMax) + rangeFirst;
             System.out.println("Question: " + numberRandom);
             System.out.print("Your answer:  ");
@@ -22,14 +22,14 @@ public class EvenGame {
             answer = scanner.nextLine();
             var evenNumber = numberRandom % 2 == 0 ? "yes" : "no";
             if (evenNumber.equals(answer)) {
-                Engine.correct();
+                Engine.showCorrectMessage();
                 indexGame++;
             } else {
-                Engine.failEnd(answer, evenNumber, playName);
-                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
+                Engine.showFailMessage(answer, evenNumber, playName);
+                indexGame = Engine.NUMBER_OF_GAMES + numberLoser;
             }
-            if (indexGame == Engine.NUMBER_OF_GAME) {
-                Engine.succesfulEnd(playName);
+            if (indexGame == Engine.NUMBER_OF_GAMES) {
+                Engine.showWinMessage(playName);
             }
         }
     }

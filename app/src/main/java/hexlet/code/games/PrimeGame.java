@@ -15,9 +15,9 @@ public class PrimeGame {
         var answerSimple = "no";
         int indexGame = 0;
         final var numberLoser = 1;
-        while (indexGame < Engine.NUMBER_OF_GAME) {
-            final var rangeMax = 100;
-            final var rangeFirst = 1;
+        while (indexGame < Engine.NUMBER_OF_GAMES) {
+            final int rangeMax = 100;
+            final int rangeFirst = 1;
             var numberRandom = (int) (Math.random() * rangeMax) + rangeFirst;
             for (int index : primeNumber) {
                 if (index == numberRandom) {
@@ -30,14 +30,14 @@ public class PrimeGame {
             Scanner scanner = new Scanner(System.in);
             answer = scanner.nextLine();
             if (answerSimple.equals(answer)) {
-                Engine.correct();
+                Engine.showCorrectMessage();
                 indexGame++;
             } else {
-                Engine.failEnd(answer, answerSimple, playName);
-                indexGame = Engine.NUMBER_OF_GAME + numberLoser;
+                Engine.showFailMessage(answer, answerSimple, playName);
+                indexGame = Engine.NUMBER_OF_GAMES + numberLoser;
             }
-            if (indexGame == Engine.NUMBER_OF_GAME) {
-                Engine.succesfulEnd(playName);
+            if (indexGame == Engine.NUMBER_OF_GAMES) {
+                Engine.showWinMessage(playName);
                 System.out.println("Let's try again, " + playName + "!");
             }
         }
