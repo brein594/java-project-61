@@ -38,7 +38,7 @@ public class PrimeGame {
             }
             if (indexGame == Engine.NUMBER_OF_GAMES) {
                 Engine.showWinMessage(playName);
-                System.out.println("Let's try again, " + playName + "!");
+                //System.out.println("Let's try again, " + playName + "!");
             }
         }
     }
