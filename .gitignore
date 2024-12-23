@@ -1,5 +1,9 @@
 /app/.gradle/
 /app/.idea/
 /app/build/
-
+/app/calc.cast
+/app/demo.cast
+/app/gcd.cast
+/app/prime.cast
+/app/progress.cast
 
