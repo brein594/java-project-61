@@ -12,7 +12,7 @@ import hexlet.code.games.GreetGame;
 
 public class App {
     public static void main(String[] args) {
-        final int gameGreet = 1;
+        private static final int GAME_GREET = 1;
         final int gameEven = 2;
         final int gameCalc = 3;
         final int gameGcd = 4;
@@ -49,7 +49,7 @@ public class App {
             case gameEven:
                 EvenGame.even();
                 break;
-            case gameGreet:
+            case GAME_GREET:
                 GreetGame.greet();
                 break;
             default:
