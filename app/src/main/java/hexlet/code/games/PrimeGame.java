@@ -10,9 +10,9 @@ public class PrimeGame {
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         final int[] primeNumber = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-                                   61, 67, 71, 73, 79, 83, 89, 97};
+                61, 67, 71, 73, 79, 83, 89, 97};
         String answer;
-        var answerSimple = "no";
+        String answerSimple = "no";
         int indexGame = 0;
         final int numberLoser = 1;
         while (indexGame < Engine.NUMBER_OF_GAMES) {
@@ -20,7 +20,7 @@ public class PrimeGame {
             final int rangeFirst = 1;
             var numberRandom = (int) (Math.random() * rangeMax) + rangeFirst;
             for (int i = 0; i < primeNumber.length; i++) {
-                if (primeNumber[i] == numberRandom) {
+               if (primeNumber[i] == numberRandom) {
                     answerSimple = "yes";
                     break;
                 }
@@ -29,8 +29,9 @@ public class PrimeGame {
             System.out.print("Your answer:  ");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.nextLine();
-            if (answerSimple.equals(answer)) {
+            if (answerSimple.equals(answer.trim())) {
                 Engine.showCorrectMessage();
+                answerSimple = "no";
                 indexGame++;
             } else {
                 Engine.showFailMessage(answer, answerSimple, playName);
