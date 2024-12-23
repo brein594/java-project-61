@@ -11,13 +11,15 @@ import hexlet.code.games.GreetGame;
 
 
 public class App {
+    private static final int GAME_GREET = 1;
+    private static final int GAME_EVEN = 2;
+    private static final int GAME_CALC = 3;
+    private static final int GAME_GCD = 4;
+    private static final int GAME_PROGRESSION = 5;
+    private static final int GAME_PRIME = 6;
+
+
     public static void main(String[] args) {
-        private static final int GAME_GREET = 1;
-        final int gameEven = 2;
-        final int gameCalc = 3;
-        final int gameGcd = 4;
-        final int gameProgression = 5;
-        final int gamePrime = 6;
 
         int play = 1;
         //while (play != 0) {
@@ -34,19 +36,19 @@ public class App {
         System.out.println("Your choice: " + play);
         //scanner.close();
         switch (play) {
-            case gamePrime:
+            case GAME_PRIME:
                 PrimeGame.prime();
                 break;
-            case gameProgression:
+            case GAME_PROGRESSION:
                 ProgressionGame.progression();
                 break;
-            case gameGcd:
+            case GAME_GCD:
                 GcdGame.gcd();
                 break;
-            case gameCalc:
+            case GAME_CALC:
                 CalcGame.calc();
                 break;
-            case gameEven:
+            case GAME_EVEN:
                 EvenGame.even();
                 break;
             case GAME_GREET:
