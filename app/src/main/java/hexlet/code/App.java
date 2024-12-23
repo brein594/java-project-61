@@ -12,12 +12,12 @@ import hexlet.code.games.GreetGame;
 
 public class App {
     public static void main(String[] args) {
-        final int game1 = 1;
-        final int game2 = 2;
-        final int game3 = 3;
-        final int game4 = 4;
-        final int game5 = 5;
-        final int game6 = 6;
+        final int gameGreet = 1;
+        final int gameEven = 2;
+        final int gameCalc = 3;
+        final int gameGcd = 4;
+        final int gameProgression = 5;
+        final int gamePrime = 6;
 
         int play = 1;
         //while (play != 0) {
@@ -34,22 +34,22 @@ public class App {
         System.out.println("Your choice: " + play);
         //scanner.close();
         switch (play) {
-            case game6:
+            case gamePrime:
                 PrimeGame.prime();
                 break;
-            case game5:
+            case gameProgression:
                 ProgressionGame.progression();
                 break;
-            case game4:
+            case gameGcd:
                 GcdGame.gcd();
                 break;
-            case game3:
+            case gameCalc:
                 CalcGame.calc();
                 break;
-            case game2:
+            case gameEven:
                 EvenGame.even();
                 break;
-            case game1:
+            case gameGreet:
                 GreetGame.greet();
                 break;
             default:
