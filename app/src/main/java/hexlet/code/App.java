@@ -20,7 +20,6 @@ public class App {
 
 
     public static void main(String[] args) {
-
         int play = 1;
         //while (play != 0) {
         System.out.println("Please enter the game number and press Enter.");

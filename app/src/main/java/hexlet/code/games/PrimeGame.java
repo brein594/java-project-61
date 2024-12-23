@@ -10,7 +10,7 @@ public class PrimeGame {
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         final int[] primeNumber = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-                                   61, 65, 67, 71, 73, 79, 83, 89, 97};
+                                   61, 67, 71, 73, 79, 83, 89, 97};
         String answer;
         var answerSimple = "no";
         int indexGame = 0;
@@ -19,8 +19,8 @@ public class PrimeGame {
             final int rangeMax = 100;
             final int rangeFirst = 1;
             var numberRandom = (int) (Math.random() * rangeMax) + rangeFirst;
-            for (int index : primeNumber) {
-                if (index == numberRandom) {
+            for (int i = 0; i < primeNumber.length; i++) {
+                if (primeNumber[i] == numberRandom) {
                     answerSimple = "yes";
                     break;
                 }
