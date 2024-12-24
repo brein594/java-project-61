@@ -6,9 +6,10 @@ public class CalcGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
     private static final int RANGE_OPERATION = 3;
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
 
     public static String[] calc() {
-        String[] result = new String[3];
+        String[] result = new String[LENGTH_ARRAYS_ANSWER];
         var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         Random random = new Random();

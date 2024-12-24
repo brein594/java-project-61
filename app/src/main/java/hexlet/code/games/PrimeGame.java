@@ -5,9 +5,10 @@ public class PrimeGame {
         53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
 
     public static String[] prime() {
-        String[] result = new String[3];
+        String[] result = new String[LENGTH_ARRAYS_ANSWER];
         String answerSimple = "no";
         var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         for (int simple : PRIME_NUMBER) {

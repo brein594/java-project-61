@@ -4,11 +4,10 @@ public class ProgressionGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
     private static final int RANGE_POSITION = 10;
-    private static final int STEP_ARRAY = 1;
-    private static final int FIRST_ELEMENT = 0;
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
 
     public static String[] progression() {
-        String[] result = new String[3];
+        String[] result = new String[LENGTH_ARRAYS_ANSWER];
         var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);

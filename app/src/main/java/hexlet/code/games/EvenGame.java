@@ -4,11 +4,12 @@ package hexlet.code.games;
 public class EvenGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
     //public String answer;
 
 
     public static String[] even() {
-        String[] result = new String[3];
+        String[] result = new String[LENGTH_ARRAYS_ANSWER];
         var resultInt = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         result[0] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         result[1] = Integer.toString(resultInt);

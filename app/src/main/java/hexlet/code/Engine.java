@@ -19,7 +19,7 @@ public class Engine {
     private static final int GAME_GCD = 4;
     private static final int GAME_PROGRESSION = 5;
     private static final int GAME_PRIME = 6;
-
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
 
     public static void game(int numberGame) {
         var playName = Cli.getByName();
@@ -27,7 +27,7 @@ public class Engine {
 
         //System.out.println(nameGame[0]);
         while (indexGame < NUMBER_OF_GAMES) {
-            String[] answerGame = new String[3];
+            String[] answerGame = new String[LENGTH_ARRAYS_ANSWER];
             if (numberGame == GAME_EVEN) {
                 answerGame = EvenGame.even();
             }
