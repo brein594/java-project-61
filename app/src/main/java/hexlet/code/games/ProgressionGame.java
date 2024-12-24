@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Arrays;
-
 public class ProgressionGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
@@ -20,17 +18,6 @@ public class ProgressionGame {
             arifProgress[i] = arifProgress[0] + i * stepProgress;
         }
         int resultInt = arifProgress[numberRandomPosition];
-
-        for (int index : Arrays.copyOfRange(arifProgress, FIRST_ELEMENT, numberRandomPosition)) {
-            System.out.print(index + " ");
-        }
-        System.out.print(".." + " ");
-        if (numberRandomPosition < arifProgress.length - STEP_ARRAY) {
-            for (int index : Arrays.copyOfRange(arifProgress, numberRandomPosition + STEP_ARRAY,
-                    arifProgress.length - STEP_ARRAY)) {
-                System.out.print(index + " ");
-            }
-        }
 
         String[] resultString = new String[RANGE_POSITION];
         for (int i = 0; i < RANGE_POSITION; i++) {
