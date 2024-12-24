@@ -28,7 +28,7 @@ public class ProgressionGame {
             }
         }
 
-        result[0] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        result[0] = "What number is missing in the progression?";
         result[1] = String.join(" ", resultString);
         result[2] = Integer.toString(resultInt);
         return result;
