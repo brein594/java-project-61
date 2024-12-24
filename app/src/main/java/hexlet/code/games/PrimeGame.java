@@ -1,12 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
 public class PrimeGame {
-    public static void prime() {
+    private static final int[] PRIME_NUMBER = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
+        53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    private static final int RANGE_MAX = 100;
+    private static final int RANGE_FIRST = 1;
+
+    public static String[] prime() {
+        String[] result = new String[3];
+        String answerSimple = "no";
+        var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        for (int simple : PRIME_NUMBER) {
+            if (simple == numberRandom) {
+                answerSimple = "yes";
+                break;
+            }
+        }
+        result[0] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        result[1] = Integer.toString(numberRandom);
+        result[2] = answerSimple;
+        return result;
+
+
+        /*
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         final int[] primeNumber = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
@@ -29,7 +45,7 @@ public class PrimeGame {
             System.out.print("Your answer:  ");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.nextLine();
-            if (answerSimple.equals(answer.trim())) {
+            if (answerSimple.equals(answer)) {
                 Engine.showCorrectMessage();
                 answerSimple = "no";
                 indexGame++;
@@ -41,6 +57,8 @@ public class PrimeGame {
                 Engine.showWinMessage(playName);
             }
         }
+
+         */
     }
 
 }

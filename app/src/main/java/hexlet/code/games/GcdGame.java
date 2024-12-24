@@ -1,12 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
 public class GcdGame {
-    public static void gcd() {
+    private static final int RANGE_MAX = 100;
+    private static final int RANGE_FIRST = 1;
+
+    public static String[] gcd() {
+        String[] result = new String[3];
+        var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        int resultInt = findGcd(numberRandomA, numberRandomB);
+        result[0] = "Find the greatest common divisor of given numbers.";
+        result[1] = Integer.toString(numberRandomA) + " " + Integer.toString(numberRandomB);
+        result[2] = Integer.toString(resultInt);
+        return result;
+
+
+        /*
         var playName = Cli.getByName();
         System.out.println("Find the greatest common divisor of given numbers.");
         int answer;
@@ -34,6 +43,8 @@ public class GcdGame {
                 Engine.showWinMessage(playName);
             }
         }
+
+         */
     }
 
     private static int findGcd(int a, int b) {

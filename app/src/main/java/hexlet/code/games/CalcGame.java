@@ -1,13 +1,42 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class CalcGame {
-    public static void calc() {
+    private static final int RANGE_MAX = 100;
+    private static final int RANGE_FIRST = 1;
+    private static final int RANGE_OPERATION = 3;
+
+    public static String[] calc() {
+        String[] result = new String[3];
+        var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        Random random = new Random();
+        int numberRandomOperation = random.nextInt(RANGE_OPERATION);
+        int resultInt = 0;
+        String resultString = "";
+        switch (numberRandomOperation) {
+            case (0):
+                resultInt = numberRandomA + numberRandomB;
+                resultString = "+";
+                break;
+            case (1):
+                resultInt = numberRandomA - numberRandomB;
+                resultString = "-";
+                break;
+            case (2):
+                resultInt = numberRandomA * numberRandomB;
+                resultString = "*";
+                break;
+            default:
+                break;
+        }
+        result[0] = "What is the result of the expression?";
+        result[1] = Integer.toString(numberRandomA) + " " + resultString + " " + Integer.toString(numberRandomB);
+        result[2] = Integer.toString(resultInt);
+        return result;
+
+        /*
         var playName = Cli.getByName();
         System.out.println("What is the result of the expression?");
         int answer;
@@ -54,6 +83,7 @@ public class CalcGame {
                 Engine.showWinMessage(playName);
             }
         }
-    }
 
+         */
+    }
 }

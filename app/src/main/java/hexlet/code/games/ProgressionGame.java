@@ -1,13 +1,51 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import hexlet.code.Engine;
-
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class ProgressionGame {
-    public static void progression() {
+    private static final int RANGE_MAX = 100;
+    private static final int RANGE_FIRST = 1;
+    private static final int RANGE_POSITION = 10;
+    private static final int STEP_ARRAY = 1;
+    private static final int FIRST_ELEMENT = 0;
+
+    public static String[] progression() {
+        String[] result = new String[3];
+        var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+        var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);
+        int[] arifProgress = new int[RANGE_POSITION];
+        arifProgress[0] = numberRandomA1;
+        for (int i = 1; i < RANGE_POSITION; i++) {
+            arifProgress[i] = arifProgress[0] + i * stepProgress;
+        }
+        int resultInt = arifProgress[numberRandomPosition];
+
+        for (int index : Arrays.copyOfRange(arifProgress, FIRST_ELEMENT, numberRandomPosition)) {
+            System.out.print(index + " ");
+        }
+        System.out.print(".." + " ");
+        if (numberRandomPosition < arifProgress.length - STEP_ARRAY) {
+            for (int index : Arrays.copyOfRange(arifProgress, numberRandomPosition + STEP_ARRAY,
+                    arifProgress.length - STEP_ARRAY)) {
+                System.out.print(index + " ");
+            }
+        }
+
+        String[] resultString = new String[RANGE_POSITION];
+        for (int i = 0; i < RANGE_POSITION; i++) {
+            if (i != numberRandomPosition) {
+                resultString[i] = Integer.toString(arifProgress[i]);
+            } else {
+                resultString[i] = "..";
+            }
+        }
+
+        result[0] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        result[1] = String.join(" ", resultString);
+        result[2] = Integer.toString(resultInt);
+        return result;
+        /*
         var playName = Cli.getByName();
         System.out.println("What number is missing in the progression?");
         int answer;
@@ -56,6 +94,8 @@ public class ProgressionGame {
                 Engine.showWinMessage(playName);
             }
         }
+
+         */
     }
 
 }
