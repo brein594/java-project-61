@@ -1,11 +1,53 @@
 package hexlet.code.games;
 
+import java.util.Scanner;
+
+import hexlet.code.Engine;
+import hexlet.code.Cli;
+
 public class ProgressionGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
     private static final int RANGE_POSITION = 10;
-    private static final int LENGTH_ARRAYS_ANSWER = 3;
+    //private static final int LENGTH_ARRAYS_ANSWER = 3;
 
+    //версия 3
+    public static void progression() {
+        var playName = Cli.getByName();
+        System.out.println("What number is missing in the progression?");
+        String answerGame;
+        String answerUser;
+        int numberGame = 0;
+        do {
+            var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);
+            int[] arifProgress = new int[RANGE_POSITION];
+            arifProgress[0] = numberRandomA1;
+            for (int i = 1; i < RANGE_POSITION; i++) {
+                arifProgress[i] = arifProgress[0] + i * stepProgress;
+            }
+            int resultInt = arifProgress[numberRandomPosition];
+            answerGame = Integer.toString(resultInt);
+
+            String[] resultString = new String[RANGE_POSITION];
+            for (int i = 0; i < RANGE_POSITION; i++) {
+                if (i != numberRandomPosition) {
+                    resultString[i] = Integer.toString(arifProgress[i]);
+                } else {
+                    resultString[i] = "..";
+                }
+            }
+                System.out.println("Question: " + String.join(" ", resultString));
+                System.out.print("Your answer:  ");
+                Scanner scanner = new Scanner(System.in);
+                answerUser = scanner.nextLine();
+                numberGame++;
+            } while(Engine.game(playName, answerGame, answerUser, numberGame));
+
+
+            //версия 2
+    /*
     public static String[] progression() {
         String[] result = new String[LENGTH_ARRAYS_ANSWER];
         var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
@@ -31,7 +73,9 @@ public class ProgressionGame {
         result[1] = String.join(" ", resultString);
         result[2] = Integer.toString(resultInt);
         return result;
+     */
         /*
+        //версия 1
         var playName = Cli.getByName();
         System.out.println("What number is missing in the progression?");
         int answer;
@@ -82,6 +126,6 @@ public class ProgressionGame {
         }
 
          */
-    }
+        }
 
-}
+    }

@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 
-import hexlet.code.games.GreetGame;
+import hexlet.code.games.*;
 
 
 public class App {
@@ -31,20 +31,21 @@ public class App {
         System.out.println("Your choice: " + game);
         //scanner.close();
         switch (game) {
+
             case GAME_PRIME:
-                Engine.game(GAME_PRIME);
+                PrimeGame.prime();
                 break;
             case GAME_PROGRESSION:
-                Engine.game(GAME_PROGRESSION);
+                ProgressionGame.progression();
                 break;
             case GAME_GCD:
-                Engine.game(GAME_GCD);
+                GcdGame.gcd();
                 break;
             case GAME_CALC:
-                Engine.game(GAME_CALC);
+                CalcGame.calc();
                 break;
             case GAME_EVEN:
-                Engine.game(GAME_EVEN);
+                EvenGame.even();
                 break;
             case GAME_GREET:
                 GreetGame.greet();

@@ -1,20 +1,42 @@
 package hexlet.code.games;
 
+import java.util.Scanner;
+
+import hexlet.code.Engine;
+import hexlet.code.Cli;
 
 public class EvenGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
-    private static final int LENGTH_ARRAYS_ANSWER = 3;
-    //public String answer;
+    //private static final int LENGTH_ARRAYS_ANSWER = 3;
+
+    public static void even() {
+        var playName = Cli.getByName();
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String answerGame;
+        String answerUser;
+        int numberGame = 0;
+        do {
+            var resultInt = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            answerGame = resultInt % 2 == 0 ? "yes" : "no";
+            System.out.println("Question: " + resultInt);
+            System.out.print("Your answer:  ");
+            Scanner scanner = new Scanner(System.in);
+            answerUser = scanner.nextLine();
+            numberGame++;
+        } while (Engine.game(playName, answerGame, answerUser, numberGame));
 
 
-    public static String[] even() {
+//версия 2
+/*
         String[] result = new String[LENGTH_ARRAYS_ANSWER];
         var resultInt = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
         result[0] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         result[1] = Integer.toString(resultInt);
         result[2] = resultInt % 2 == 0 ? "yes" : "no";
         return result;
+        */
+
  /*
           System.out.println("Question: " + numberRandom);
            System.out.print("Your answer:  ");

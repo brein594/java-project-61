@@ -1,12 +1,44 @@
 package hexlet.code.games;
 
+import java.util.Scanner;
+
+import hexlet.code.Engine;
+import hexlet.code.Cli;
+
 public class PrimeGame {
     private static final int[] PRIME_NUMBER = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
         53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
-    private static final int LENGTH_ARRAYS_ANSWER = 3;
+    //private static final int LENGTH_ARRAYS_ANSWER = 3;
 
+
+    public static void prime() {
+        var playName = Cli.getByName();
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String answerGame = "no";
+        String answerUser;
+        int numberGame = 0;
+        do {
+            var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
+            for (int simple : PRIME_NUMBER) {
+                if (simple == numberRandom) {
+                    answerGame = "yes";
+                    break;
+                }
+            }
+
+            System.out.println("Question: " + numberRandom);
+            System.out.print("Your answer:  ");
+            Scanner scanner = new Scanner(System.in);
+            answerUser = scanner.nextLine();
+            numberGame++;
+        } while (Engine.game(playName, answerGame, answerUser, numberGame));
+
+
+
+        //версия 2
+    /*
     public static String[] prime() {
         String[] result = new String[LENGTH_ARRAYS_ANSWER];
         String answerSimple = "no";
@@ -21,8 +53,8 @@ public class PrimeGame {
         result[1] = Integer.toString(numberRandom);
         result[2] = answerSimple;
         return result;
-
-
+*/
+        //версия 1
         /*
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

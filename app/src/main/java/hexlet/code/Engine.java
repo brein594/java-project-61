@@ -10,9 +10,27 @@ import hexlet.code.games.EvenGame;
 
 public class Engine {
     private static final int NUMBER_OF_GAMES = 3;
-    private static final int NUMBER_LOSER = 1;
-    private String answer;
 
+    //версия 3
+    public static boolean game(String playName, String answerGame, String answerUser, int numberGame) {
+        var result = false;
+        if (answerGame.equals(answerUser)) {
+            System.out.println("Correct!");
+            result = true;
+        } else {
+            System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame);
+            System.out.println("Let's try again, " + playName + "!");
+        }
+        if (numberGame == NUMBER_OF_GAMES) {
+            System.out.println("Congratulations, " + playName + "!");
+            result = false;
+        }
+        return result;
+    }
+
+
+    //версия 2
+    /*
     //private static final int GAME_GREET = 1;
     private static final int GAME_EVEN = 2;
     private static final int GAME_CALC = 3;
@@ -57,21 +75,18 @@ public class Engine {
             } else {
                 System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame[2]);
                 System.out.println("Let's try again, " + playName + "!");
-                indexGame = Engine.NUMBER_OF_GAMES + NUMBER_LOSER;
+                //indexGame = Engine.NUMBER_OF_GAMES + NUMBER_LOSER;
+                break;
             }
             if (indexGame == Engine.NUMBER_OF_GAMES) {
                 System.out.println("Congratulations, " + playName + "!");
             }
         }
     }
+   */
 
 
-
-
-
-
-
-
+    //версия 1
     /*
     public static final int NUMBER_OF_GAMES = 3;
 
