@@ -20,6 +20,7 @@ public class Engine {
         } else {
             System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame);
             System.out.println("Let's try again, " + playName + "!");
+            return false;
         }
         if (numberGame == NUMBER_OF_GAMES) {
             System.out.println("Congratulations, " + playName + "!");
