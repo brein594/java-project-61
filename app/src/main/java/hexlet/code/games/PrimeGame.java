@@ -15,7 +15,7 @@ public class PrimeGame {
 
     public static void prime() {
         var playName = Cli.getByName();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         String answerGame = "no";
         String answerUser;
         int numberGame = 0;
