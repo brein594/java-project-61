@@ -16,10 +16,11 @@ public class PrimeGame {
     public static void prime() {
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        String answerGame = "no";
+        String answerGame;
         String answerUser;
         int numberGame = 0;
         do {
+            answerGame = "no";
             var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             for (int simple : PRIME_NUMBER) {
                 if (simple == numberRandom) {
