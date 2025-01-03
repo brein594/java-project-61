@@ -3,7 +3,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 
-import hexlet.code.games.*;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.GreetGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.GcdGame;
 
 
 public class App {

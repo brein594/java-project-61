@@ -38,15 +38,15 @@ public class ProgressionGame {
                     resultString[i] = "..";
                 }
             }
-                System.out.println("Question: " + String.join(" ", resultString));
-                System.out.print("Your answer:  ");
-                Scanner scanner = new Scanner(System.in);
-                answerUser = scanner.nextLine();
-                numberGame++;
-            } while(Engine.game(playName, answerGame, answerUser, numberGame));
+            System.out.println("Question: " + String.join(" ", resultString));
+            System.out.print("Your answer:  ");
+            Scanner scanner = new Scanner(System.in);
+            answerUser = scanner.nextLine();
+            numberGame++;
+        } while (Engine.game(playName, answerGame, answerUser, numberGame));
 
 
-            //версия 2
+        //версия 2
     /*
     public static String[] progression() {
         String[] result = new String[LENGTH_ARRAYS_ANSWER];
@@ -126,6 +126,6 @@ public class ProgressionGame {
         }
 
          */
-        }
-
     }
+
+}

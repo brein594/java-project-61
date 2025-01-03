@@ -1,13 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.PrimeGame;
-import hexlet.code.games.GcdGame;
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.EvenGame;
-
 public class Engine {
     private static final int NUMBER_OF_GAMES = 3;
 
