@@ -8,26 +8,30 @@ import java.util.Scanner;
 public class GcdGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
-    private static final int LENGTH_ARRAYS_ANSWER = 3;
+    private static final int NUMBER_OF_GAMES = 3;
+    private static final int LENGTH_ARRAYS_ANSWER = 6;
 
     //вариант 3
     public static void gcd() {
         var playName = Cli.getByName();
         System.out.println("Find the greatest common divisor of given numbers.");
-        String answerGame;
-        String answerUser;
+        String[] answerQuestion = new String[LENGTH_ARRAYS_ANSWER];
+        String answerGame ;
         int numberGame = 0;
-        do {
+        var index = 0;
+
+        while (numberGame < NUMBER_OF_GAMES) {
             var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             int resultInt = findGcd(numberRandomA, numberRandomB);
             answerGame = Integer.toString(resultInt);
-            System.out.println("Question: " + numberRandomA + " " + numberRandomB);
-            System.out.print("Your answer:  ");
-            Scanner scanner = new Scanner(System.in);
-            answerUser = scanner.nextLine();
+
+            answerQuestion[index++] = Integer.toString(numberRandomA) + " " + Integer.toString(numberRandomB) ;
+            answerQuestion[index++] = answerGame;
             numberGame++;
-        } while (Engine.game(playName, answerGame, answerUser, numberGame));
+        }
+        Engine.game(playName, answerQuestion);
+        //} while (Engine.game(playName, answerGame, answerUser, numberGame));
 
         //вариант 2
     /*

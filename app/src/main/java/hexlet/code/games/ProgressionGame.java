@@ -9,16 +9,19 @@ public class ProgressionGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
     private static final int RANGE_POSITION = 10;
-    //private static final int LENGTH_ARRAYS_ANSWER = 3;
+    private static final int NUMBER_OF_GAMES = 3;
+    private static final int LENGTH_ARRAYS_ANSWER = 6;
 
     //версия 3
     public static void progression() {
         var playName = Cli.getByName();
         System.out.println("What number is missing in the progression?");
-        String answerGame;
-        String answerUser;
+        String[] answerQuestion = new String[LENGTH_ARRAYS_ANSWER];
+        String answerGame ;
         int numberGame = 0;
-        do {
+        var index = 0;
+
+        while (numberGame < NUMBER_OF_GAMES) {
             var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);
@@ -38,12 +41,12 @@ public class ProgressionGame {
                     resultString[i] = "..";
                 }
             }
-            System.out.println("Question: " + String.join(" ", resultString));
-            System.out.print("Your answer:  ");
-            Scanner scanner = new Scanner(System.in);
-            answerUser = scanner.nextLine();
+            answerQuestion[index++] = String.join(" ", resultString);
+            answerQuestion[index++] = answerGame;
             numberGame++;
-        } while (Engine.game(playName, answerGame, answerUser, numberGame));
+        }
+        Engine.game(playName, answerQuestion);
+       //} while (Engine.game(playName, answerGame, answerUser, numberGame));
 
 
         //версия 2

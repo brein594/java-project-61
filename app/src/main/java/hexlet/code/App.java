@@ -36,7 +36,6 @@ public class App {
         System.out.println("Your choice: " + game);
         //scanner.close();
         switch (game) {
-
             case GAME_PRIME:
                 PrimeGame.prime();
                 break;

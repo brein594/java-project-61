@@ -1,9 +1,46 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
-    private static final int NUMBER_OF_GAMES = 3;
+    //private static final int NUMBER_OF_GAMES = 3;
+
+
+    public static boolean game(String playName, String[] answerGame) {
+        var result = true;
+        var index = 0;
+        int numberGame = 0;
+        int numberOfGames = answerGame.length / 2 ;
+        String answerUser;
+        while (numberGame < numberOfGames) {
+            numberGame++;
+            System.out.println("Question: " + answerGame[index++]);
+            System.out.print("Your answer:  ");
+            Scanner scanner = new Scanner(System.in);
+            answerUser = scanner.nextLine();
+
+            if (answerUser.equals(answerGame[index])) {
+                System.out.println("Correct!");
+                index++;
+                result = true;
+            } else {
+                System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame[index]);
+                System.out.println("Let's try again, " + playName + "!");
+                result = false;
+                break;
+            }
+            if (numberGame == numberOfGames) {
+                System.out.println("Congratulations, " + playName + "!");
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
 
     //версия 3
+    /*
     public static boolean game(String playName, String answerGame, String answerUser, int numberGame) {
         var result = false;
         if (answerGame.equals(answerUser)) {
@@ -20,7 +57,7 @@ public class Engine {
         }
         return result;
     }
-
+*/
 
     //версия 2
     /*

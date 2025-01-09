@@ -10,16 +10,19 @@ public class PrimeGame {
         53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
-    //private static final int LENGTH_ARRAYS_ANSWER = 3;
+    private static final int NUMBER_OF_GAMES = 3;
+    private static final int LENGTH_ARRAYS_ANSWER = 6;
 
 
     public static void prime() {
         var playName = Cli.getByName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        String answerGame;
-        String answerUser;
+        String[] answerQuestion = new String[LENGTH_ARRAYS_ANSWER];
+        String answerGame ;
         int numberGame = 0;
-        do {
+        var index = 0;
+
+        while (numberGame < NUMBER_OF_GAMES) {
             answerGame = "no";
             var numberRandom = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             for (int simple : PRIME_NUMBER) {
@@ -29,12 +32,12 @@ public class PrimeGame {
                 }
             }
 
-            System.out.println("Question: " + numberRandom);
-            System.out.print("Your answer:  ");
-            Scanner scanner = new Scanner(System.in);
-            answerUser = scanner.nextLine();
+            answerQuestion[index++] =  Integer.toString(numberRandom);
+            answerQuestion[index++] =  answerGame;
             numberGame++;
-        } while (Engine.game(playName, answerGame, answerUser, numberGame));
+        }
+        Engine.game(playName, answerQuestion);
+       // } while (Engine.game(playName, answerGame, answerUser, numberGame));
 
 
 
