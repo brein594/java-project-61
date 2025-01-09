@@ -37,22 +37,22 @@ public class App {
         //scanner.close();
         switch (game) {
             case GAME_PRIME:
-                PrimeGame.prime();
+                PrimeGame.play();
                 break;
             case GAME_PROGRESSION:
-                ProgressionGame.progression();
+                ProgressionGame.play();
                 break;
             case GAME_GCD:
-                GcdGame.gcd();
+                GcdGame.play();
                 break;
             case GAME_CALC:
-                CalcGame.calc();
+                CalcGame.play();
                 break;
             case GAME_EVEN:
-                EvenGame.even();
+                EvenGame.play();
                 break;
             case GAME_GREET:
-                GreetGame.greet();
+                GreetGame.play();
                 break;
             default:
                 break;

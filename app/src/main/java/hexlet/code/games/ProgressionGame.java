@@ -1,24 +1,19 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Cli;
 
 public class ProgressionGame {
     private static final int RANGE_MAX = 100;
     private static final int RANGE_FIRST = 1;
     private static final int RANGE_POSITION = 10;
-    private static final int NUMBER_OF_GAMES = 3;
-    private static final int LENGTH_ARRAYS_ANSWER = 6;
 
-    public static void progression() {
-        var playName = Cli.getByName();
-        System.out.println("What number is missing in the progression?");
-        String[] answerQuestion = new String[LENGTH_ARRAYS_ANSWER];
+    public static void play() {
+        var description = "What number is missing in the progression?";
+        String[][] answerQuestion = new String[Engine.getLengthArraysAnswer()][2];
         String answerGame;
         int numberGame = 0;
-        var index = 0;
 
-        while (numberGame < NUMBER_OF_GAMES) {
+        while (numberGame < Engine.getRoundsCount()) {
             var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);
@@ -38,11 +33,11 @@ public class ProgressionGame {
                     resultString[i] = "..";
                 }
             }
-            answerQuestion[index++] = String.join(" ", resultString);
-            answerQuestion[index++] = answerGame;
+            answerQuestion[numberGame][0] = String.join(" ", resultString);
+            answerQuestion[numberGame][1] = answerGame;
             numberGame++;
         }
-        Engine.game(playName, answerQuestion);
+        Engine.game(description, answerQuestion);
     }
 }
 

@@ -1,41 +1,50 @@
 package hexlet.code;
 
+import hexlet.code.games.GreetGame;
+
 import java.util.Scanner;
 
 public class Engine {
-    //private static final int NUMBER_OF_GAMES = 3;
+    private static final int ROUNDS_COUNT = 3;
+    private static final int LENGTH_ARRAYS_ANSWER = 3;
 
-
-    public static boolean game(String playName, String[] answerGame) {
+    public static boolean game(String description, String[][] answerGame) {
+        var playName = GreetGame.play();
+        System.out.println(description);
+        Scanner scanner = new Scanner(System.in);
         var result = true;
         var index = 0;
         int numberGame = 0;
-        int numberOfGames = answerGame.length / 2;
         String answerUser;
-        Scanner scanner = new Scanner(System.in);
-        while (numberGame < numberOfGames) {
-            numberGame++;
-            System.out.println("Question: " + answerGame[index++]);
+        while (numberGame < LENGTH_ARRAYS_ANSWER) {
+            System.out.println("Question: " + answerGame[numberGame][0]);
             System.out.print("Your answer:  ");
             answerUser = scanner.nextLine();
 
-            if (answerUser.equals(answerGame[index])) {
+            if (answerUser.equals(answerGame[numberGame][1])) {
                 System.out.println("Correct!");
                 index++;
                 result = true;
             } else {
-                System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame[index]);
+                System.out.println(answerUser + " is wrong answer ;(. Correct answer was " + answerGame[numberGame][1]);
                 System.out.println("Let's try again, " + playName + "!");
                 result = false;
                 break;
             }
-            if (numberGame == numberOfGames) {
+            numberGame++;
+            if (numberGame == LENGTH_ARRAYS_ANSWER) {
                 System.out.println("Congratulations, " + playName + "!");
-                result = true;
-                break;
             }
         }
         scanner.close();
         return result;
+    }
+
+    public static int getRoundsCount() {
+        return ROUNDS_COUNT;
+    }
+
+    public static int  getLengthArraysAnswer() {
+        return LENGTH_ARRAYS_ANSWER;
     }
 }
