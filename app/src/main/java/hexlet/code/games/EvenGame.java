@@ -10,17 +10,12 @@ public class EvenGame {
         var description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] answerQuestion = new String[Engine.getLengthArraysAnswer()][2];
         String answerGame;
-        int numberGame = 0;
-
-        while (numberGame < Engine.getRoundsCount()) {
+        for (int numberGame = 0; numberGame < Engine.getRoundsCount(); numberGame++) {
             var resultInt = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             answerGame = resultInt % 2 == 0 ? "yes" : "no";
-
             answerQuestion[numberGame][0] = Integer.toString(resultInt);
             answerQuestion[numberGame][1] = answerGame;
-            numberGame++;
         }
         Engine.game(description, answerQuestion);
     }
 }
-

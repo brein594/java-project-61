@@ -11,9 +11,9 @@ public class ProgressionGame {
         var description = "What number is missing in the progression?";
         String[][] answerQuestion = new String[Engine.getLengthArraysAnswer()][2];
         String answerGame;
-        int numberGame = 0;
 
-        while (numberGame < Engine.getRoundsCount()) {
+
+        for (int numberGame = 0; numberGame < Engine.getRoundsCount(); numberGame++) {
             var numberRandomA1 = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var stepProgress = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomPosition = (int) (Math.random() * RANGE_POSITION);
@@ -35,7 +35,7 @@ public class ProgressionGame {
             }
             answerQuestion[numberGame][0] = String.join(" ", resultString);
             answerQuestion[numberGame][1] = answerGame;
-            numberGame++;
+
         }
         Engine.game(description, answerQuestion);
     }

@@ -13,9 +13,8 @@ public class CalcGame {
         var description = "What is the result of the expression?";
         String[][] answerQuestion = new String[Engine.getLengthArraysAnswer()][2];
         String answerGame;
-        int numberGame = 0;
 
-        while (numberGame < Engine.getRoundsCount()) {
+        for (var numberGame = 0; numberGame < Engine.getRoundsCount(); numberGame++) {
             var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             Random random = new Random();
@@ -42,7 +41,6 @@ public class CalcGame {
             answerQuestion[numberGame][0] = Integer.toString(numberRandomA) + resultString
                     + Integer.toString(numberRandomB);
             answerQuestion[numberGame][1] = answerGame;
-            numberGame++;
         }
         Engine.game(description, answerQuestion);
     }

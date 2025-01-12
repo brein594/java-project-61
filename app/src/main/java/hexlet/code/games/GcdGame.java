@@ -10,18 +10,15 @@ public class GcdGame {
         var description = "Find the greatest common divisor of given numbers.";
         String[][] answerQuestion = new String[Engine.getLengthArraysAnswer()][2];
         String answerGame;
-        int numberGame = 0;
-        var index = 0;
 
-        while (numberGame < Engine.getRoundsCount()) {
+
+        for (int numberGame = 0; numberGame < Engine.getRoundsCount(); numberGame++) {
             var numberRandomA = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             var numberRandomB = (int) (Math.random() * RANGE_MAX) + RANGE_FIRST;
             int resultInt = findGcd(numberRandomA, numberRandomB);
             answerGame = Integer.toString(resultInt);
-
             answerQuestion[numberGame][0] = Integer.toString(numberRandomA) + " " + Integer.toString(numberRandomB);
             answerQuestion[numberGame][1] = answerGame;
-            numberGame++;
         }
         Engine.game(description, answerQuestion);
     }
